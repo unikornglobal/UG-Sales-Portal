@@ -4,10 +4,10 @@
 
 // ---------- Config ----------
 // TODO: replace with your own EmailJS credentials (emailjs.com)
-const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
-const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
-const EMAILJS_TEMPLATE_ID_TEAM = "YOUR_TEAM_TEMPLATE_ID";
-const EMAILJS_TEMPLATE_ID_CLIENT = "YOUR_CLIENT_TEMPLATE_ID";
+const EMAILJS_PUBLIC_KEY = "dtxxe48IOxVnpeieh";
+const EMAILJS_SERVICE_ID = "service_qy91wll";
+const EMAILJS_TEMPLATE_ID_TEAM = "template_djlpd8o";
+const EMAILJS_TEMPLATE_ID_CLIENT = "template_387rqwl";
 
 const WEEKS_PER_MONTH = 4.33;
 
