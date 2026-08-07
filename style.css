@@ -175,6 +175,94 @@ body {
   background: linear-gradient(90deg, transparent, rgba(138, 92, 255, 0.35), transparent);
 }
 
+/* ---------- Services overview (explainer cards) ---------- */
+.explore-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.explore-card {
+  display: grid;
+  gap: 6px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border-radius: var(--radius-sm);
+  padding: 18px 20px;
+  box-shadow: 0 10px 24px -18px rgba(20, 17, 41, 0.16);
+  transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.explore-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(138, 92, 255, 0.3);
+  box-shadow: 0 0 22px rgba(185, 140, 255, 0.22), 0 10px 24px -18px rgba(20, 17, 41, 0.16);
+}
+
+.explore-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--iris-gradient);
+  margin-bottom: 2px;
+}
+
+.explore-name {
+  font-weight: 600;
+  font-size: 14.5px;
+  color: var(--ink);
+}
+
+.explore-desc {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+/* ---------- Quiz callout band ---------- */
+.quiz-band {
+  border: 1px solid var(--glass-border);
+  background: linear-gradient(180deg, rgba(138, 92, 255, 0.08), var(--glass-bg));
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border-radius: var(--radius-md);
+  padding: 26px 24px;
+  display: grid;
+  gap: 18px;
+  box-shadow: 0 12px 32px -18px rgba(20, 17, 41, 0.16);
+}
+
+.quiz-band-text h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 20px;
+  margin: 10px 0 8px;
+  color: var(--ink);
+}
+
+.quiz-band-text p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.quiz-band-button {
+  justify-self: start;
+}
+
+@media (min-width: 600px) {
+  .explore-grid { grid-template-columns: 1fr 1fr; }
+  .quiz-band {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 30px 32px;
+  }
+  .quiz-band-button { justify-self: end; white-space: nowrap; }
+}
+
 /* ---------- Package cards (light glass) ---------- */
 .package-grid {
   display: grid;
@@ -629,8 +717,8 @@ input:focus, textarea:focus {
   body { padding-bottom: 0; padding-right: 340px; }
 
   .builder { max-width: 640px; margin: 0 0 0 auto; padding: 0 48px 70px 24px; }
-  .site-header { text-align: left; padding-left: 24px; padding-bottom: 24px; }
-  .header-logo { margin: 0; max-width: 340px; }
+  .site-header { text-align: left; padding-left: 24px; }
+  .header-logo { margin: 0; }
 
   .package-grid { grid-template-columns: 1fr 1fr; }
 
@@ -656,4 +744,4 @@ input:focus, textarea:focus {
     padding: 34px 30px;
     overflow: visible;
   }
-}
+                  }
