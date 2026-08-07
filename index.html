@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UNIKORN Global — Business Capacity Check</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="capacity-style.css">
+</head>
+<body>
+
+<div class="bg-aurora" aria-hidden="true"></div>
+
+<header class="site-header">
+  <img src="unikorn-logo.jpg" alt="UNIKORN Global" class="header-logo">
+</header>
+
+<main class="cc-wrap">
+
+  <!-- PROGRESS BAR (hidden on intro + results) -->
+  <div class="cc-progress" id="ccProgress" hidden>
+    <div class="cc-progress-track">
+      <div class="cc-progress-fill" id="ccProgressFill"></div>
+    </div>
+    <span class="cc-progress-label" id="ccProgressLabel">Section 1 of 8</span>
+  </div>
+
+  <!-- ============ INTRO SCREEN ============ -->
+  <section class="cc-screen" id="screen-intro">
+    <span class="step-eyebrow">Business Capacity Check</span>
+    <h1 class="intro-title">Discover where your business needs more capacity<span class="dot">.</span></h1>
+    <p class="intro-sub">Answer 32 quick statements across 8 areas of your business. Takes about 3 minutes. No email required to see your results.</p>
+
+    <div class="cc-intro-card">
+      <p class="cc-intro-note">You're not being graded. Every growing business runs out of capacity somewhere — this just shows you exactly where, so you know what to fix first.</p>
+    </div>
+
+    <button type="button" class="submit-button cc-start-button" id="startButton">
+      <span class="submit-button-text">Start the check</span>
+    </button>
+  </section>
+
+  <!-- ============ QUESTION SECTIONS (injected by JS) ============ -->
+  <div id="sectionsContainer"></div>
+
+  <!-- ============ RESULTS SCREEN ============ -->
+  <section class="cc-screen" id="screen-results" hidden>
+    <span class="step-eyebrow">Your results</span>
+    <h2 class="cc-results-title" id="resultsTitle">Your Business Capacity Score</h2>
+
+    <div class="cc-overall-card">
+      <span class="cc-overall-emoji" id="overallEmoji">🌱</span>
+      <span class="cc-overall-score" id="overallScore">0<span>/96</span></span>
+      <span class="cc-overall-tag" id="overallTag">Healthy Business</span>
+      <p class="cc-overall-desc" id="overallDesc"></p>
+    </div>
+
+    <h3 class="cc-breakdown-title">Where your capacity is stretched</h3>
+    <p class="step-hint">Ranked by priority — the top of this list is costing your business the most time right now.</p>
+
+    <div class="cc-breakdown-list" id="breakdownList"></div>
+
+    <div class="cc-offer-card" id="offerCard">
+      <span class="step-eyebrow">Our gift to you</span>
+      <h3 id="offerTitle">A complimentary solution for your top priority area</h3>
+      <p id="offerDesc">Based on your results, we'll put together one complimentary recommendation for <strong id="offerCategory">—</strong> — no cost, no obligation.</p>
+
+      <form id="resultsForm" class="quote-form cc-results-form">
+        <div class="form-row">
+          <label for="ccCompanyName">Company name</label>
+          <input type="text" id="ccCompanyName" name="companyName" required autocomplete="organization">
+        </div>
+        <div class="form-row">
+          <label for="ccContactPerson">Contact person</label>
+          <input type="text" id="ccContactPerson" name="contactPerson" required autocomplete="name">
+        </div>
+        <div class="form-row form-row-split">
+          <div>
+            <label for="ccEmail">Email</label>
+            <input type="email" id="ccEmail" name="email" required autocomplete="email">
+          </div>
+          <div>
+            <label for="ccPhone">Phone number</label>
+            <input type="tel" id="ccPhone" name="phone" required autocomplete="tel">
+          </div>
+        </div>
+
+        <button type="submit" class="submit-button" id="ccSubmitButton">
+          <span class="submit-button-text">Send Me My Results &amp; Complimentary Plan</span>
+          <span class="submit-button-spinner" aria-hidden="true"></span>
+        </button>
+
+        <p class="form-status" id="ccFormStatus" role="status"></p>
+      </form>
+    </div>
+
+    <button type="button" class="cc-restart-link" id="restartButton">Start over</button>
+  </section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="capacity-script.js"></script>
+</body>
+</html>
