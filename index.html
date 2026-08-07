@@ -14,7 +14,7 @@
 <div class="bg-aurora" aria-hidden="true"></div>
 
 <header class="site-header">
-  <img src="unikorn-logo.png" alt="UNIKORN Global — Extraordinary Support. Exceptional Growth." class="header-logo">
+  <img src="unikorn-logo.jpg" alt="UNIKORN Global — Extraordinary Support. Exceptional Growth." class="header-logo">
 </header>
 
 <main class="builder">
@@ -22,6 +22,55 @@
   <section class="intro">
     <h1 class="intro-title">Build your support plan<span class="dot">.</span></h1>
     <p class="intro-sub">Pick a ready-made package, or design your own from nine specialist services. Your estimate updates as you go.</p>
+  </section>
+
+  <!-- SERVICES OVERVIEW -->
+  <section class="step" id="step-explore">
+    <div class="step-label"><span class="step-eyebrow">What we cover</span><h2>Eight areas of support</h2></div>
+    <p class="step-hint">Every plan below draws from these — mix and match whatever your business needs.</p>
+
+    <div class="explore-grid">
+      <div class="explore-card">
+        <span class="explore-dot" aria-hidden="true"></span>
+        <span class="explore-name">Executive &amp; Administrative Support</span>
+        <span class="explore-desc">Diary and email management, document prep, travel coordination, meeting management.</span>
+      </div>
+      <div class="explore-card">
+        <span class="explore-dot" aria-hidden="true"></span>
+        <span class="explore-name">Business Operations Support</span>
+        <span class="explore-desc">Process improvement, SOP development, project coordination, workflow optimisation.</span>
+      </div>
+      <div class="explore-card">
+        <span class="explore-dot" aria-hidden="true"></span>
+        <span class="explore-name">Marketing &amp; Brand Support</span>
+        <span class="explore-desc">Social media management, content creation, email marketing, newsletters, presentation design.</span>
+      </div>
+      <div class="explore-card">
+        <span class="explore-dot" aria-hidden="true"></span>
+        <span class="explore-name">Sales &amp; Customer Support</span>
+        <span class="explore-desc">CRM management, quotation and proposal support, customer communication, follow-up coordination.</span>
+      </div>
+      <div class="explore-card">
+        <span class="explore-dot" aria-hidden="true"></span>
+        <span class="explore-name">Finance &amp; Business Administration</span>
+        <span class="explore-desc">Invoicing, quotations, expense tracking, purchase order administration, basic bookkeeping support.</span>
+      </div>
+      <div class="explore-card">
+        <span class="explore-dot" aria-hidden="true"></span>
+        <span class="explore-name">Health, Safety, Environment &amp; Quality</span>
+        <span class="explore-desc">Risk assessments, incident reporting, compliance documentation, audits and inspections.</span>
+      </div>
+      <div class="explore-card">
+        <span class="explore-dot" aria-hidden="true"></span>
+        <span class="explore-name">Human Resources &amp; People Support</span>
+        <span class="explore-desc">Recruitment administration, employee onboarding, training coordination, leave administration.</span>
+      </div>
+      <div class="explore-card">
+        <span class="explore-dot" aria-hidden="true"></span>
+        <span class="explore-name">Digital Systems &amp; Business Intelligence</span>
+        <span class="explore-desc">AI-powered business support, workflow automation, dashboards, business systems optimisation.</span>
+      </div>
+    </div>
   </section>
 
   <!-- STEP 1: PACKAGES -->
@@ -69,6 +118,20 @@
     </div>
   </section>
 
+  <!-- QUIZ CALLOUT -->
+  <section class="step" id="step-quiz">
+    <div class="quiz-band">
+      <div class="quiz-band-text">
+        <span class="step-eyebrow">Not sure where to start?</span>
+        <h2>Take our Business Pain Point Quiz</h2>
+        <p>A few quick questions to help us understand where your time is really going — and we'll come back with a complimentary solution for one priority area, on us.</p>
+      </div>
+      <button type="button" class="submit-button quiz-band-button" id="quizButton">
+        <span class="submit-button-text">Take the quiz</span>
+      </button>
+    </div>
+  </section>
+
   <!-- STEP 2: CUSTOM SLIDERS -->
   <section class="step step-custom" id="step-custom">
     <div class="step-label"><span class="step-eyebrow">Step 2</span><h2>Fine-tune your hours</h2></div>
@@ -82,7 +145,7 @@
   <!-- STEP 3: CLIENT FORM -->
   <section class="step" id="step-form">
     <div class="step-label"><span class="step-eyebrow">Step 3</span><h2>Request your proposal</h2></div>
-    <p class="step-hint">We'll send your estimate straight to our team, and a copy to you.</p>
+    <p class="step-hint">Share a few details and one of our team will put together a plan tailored to what you actually need — no obligation, no hard sell.</p>
 
     <form id="quoteForm" class="quote-form">
       <div class="form-row">
@@ -93,11 +156,12 @@
         <label for="contactPerson">Contact person</label>
         <input type="text" id="contactPerson" name="contactPerson" required autocomplete="name">
       </div>
-      <div class="form-row">
+      <div class="form-row form-row-split">
+        <div>
           <label for="email">Email</label>
           <input type="email" id="email" name="email" required autocomplete="email">
         </div>
-        <div class="form-row">
+        <div>
           <label for="phone">Phone number</label>
           <input type="tel" id="phone" name="phone" required autocomplete="tel">
         </div>
