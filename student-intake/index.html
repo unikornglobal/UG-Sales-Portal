@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UNIKORN Global — Student Associate Intake</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="intake-style.css">
+</head>
+<body>
+
+<div class="bg-aurora" aria-hidden="true"></div>
+
+<header class="site-header">
+  <img src="unikorn-logo.jpg" alt="UNIKORN Global" class="header-logo">
+</header>
+
+<main class="in-wrap">
+
+  <section class="in-intro">
+    <span class="step-eyebrow">Student Associate Intake</span>
+    <h1 class="intro-title">Extraordinary Support. Exceptional Growth<span class="dot">.</span></h1>
+    <p class="intro-sub">Tell us who you are, what you can do, and where you'd fit best. This takes about 10 minutes — a short practical task will follow separately once we've reviewed your answers.</p>
+  </section>
+
+  <form id="intakeForm" novalidate>
+
+    <!-- 1. ABOUT YOU -->
+    <section class="in-card">
+      <h2 class="in-card-title">1. About You</h2>
+
+      <div class="form-row">
+        <label for="fullName">Full name</label>
+        <input type="text" id="fullName" name="fullName" required autocomplete="name">
+      </div>
+      <div class="form-row form-row-split">
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required autocomplete="email">
+        </div>
+        <div>
+          <label for="phone">Phone / WhatsApp</label>
+          <input type="tel" id="phone" name="phone" required autocomplete="tel">
+        </div>
+      </div>
+      <div class="form-row">
+        <label for="location">City / Country</label>
+        <input type="text" id="location" name="location" required>
+      </div>
+
+      <div class="form-row">
+        <label>Are you currently:</label>
+        <div class="in-options" data-group="currentStatus">
+          <label class="in-check"><input type="radio" name="currentStatus" value="Studying" required> Studying</label>
+          <label class="in-check"><input type="radio" name="currentStatus" value="Recently graduated"> Recently graduated</label>
+          <label class="in-check"><input type="radio" name="currentStatus" value="Unemployed"> Unemployed</label>
+          <label class="in-check"><input type="radio" name="currentStatus" value="Employed"> Employed</label>
+          <label class="in-check in-check-other">
+            <input type="radio" name="currentStatus" value="Other" data-other-toggle="currentStatusOther"> Other:
+            <input type="text" class="in-other-input" name="currentStatusOther" id="currentStatusOther" disabled placeholder="Please specify">
+          </label>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label for="studyField">What are you studying / what did you study?</label>
+        <textarea id="studyField" name="studyField" rows="2"></textarea>
+      </div>
+    </section>
+
+    <!-- 2. YOUR SKILLS -->
+    <section class="in-card">
+      <h2 class="in-card-title">2. Your Skills</h2>
+
+      <div class="form-row">
+        <label>Which areas can you assist with? (select all that apply)</label>
+        <div class="in-options" data-group="skills">
+          <label class="in-check"><input type="checkbox" name="skills" value="Administration"> Administration</label>
+          <label class="in-check"><input type="checkbox" name="skills" value="Data Entry"> Data Entry</label>
+          <label class="in-check"><input type="checkbox" name="skills" value="Research"> Research</label>
+          <label class="in-check"><input type="checkbox" name="skills" value="Customer Service"> Customer Service</label>
+          <label class="in-check"><input type="checkbox" name="skills" value="Marketing"> Marketing</label>
+          <label class="in-check"><input type="checkbox" name="skills" value="Social Media"> Social Media</label>
+          <label class="in-check"><input type="checkbox" name="skills" value="Graphic Design"> Graphic Design</label>
+          <label class="in-check"><input type="checkbox" name="skills" value="Writing / Content"> Writing / Content</label>
+          <label class="in-check"><input type="checkbox" name="skills" value="Finance / Bookkeeping"> Finance / Bookkeeping</label>
+          <label class="in-check"><input type="checkbox" name="skills" value="HR"> HR</label>
+          <label class="in-check"><input type="checkbox" name="skills" value="IT / Technology"> IT / Technology</label>
+          <label class="in-check"><input type="checkbox" name="skills" value="Events"> Events</label>
+          <label class="in-check in-check-other">
+            <input type="checkbox" name="skills" value="Other" data-other-toggle="skillsOther"> Other:
+            <input type="text" class="in-other-input" name="skillsOther" id="skillsOther" disabled placeholder="Please specify">
+          </label>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label for="strongestSkill">What is your strongest skill?</label>
+        <textarea id="strongestSkill" name="strongestSkill" rows="2" required></textarea>
+      </div>
+
+      <div class="form-row">
+        <label>How would you rate your overall ability?</label>
+        <div class="in-options in-options-stack" data-group="overallAbility">
+          <label class="in-check"><input type="radio" name="overallAbility" value="Beginner" required> Beginner — I need guidance</label>
+          <label class="in-check"><input type="radio" name="overallAbility" value="Intermediate"> Intermediate — I can work independently on familiar tasks</label>
+          <label class="in-check"><input type="radio" name="overallAbility" value="Advanced"> Advanced — I can handle complex tasks independently</label>
+          <label class="in-check"><input type="radio" name="overallAbility" value="Specialist"> Specialist — I have professional-level expertise</label>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. DIGITAL SKILLS -->
+    <section class="in-card">
+      <h2 class="in-card-title">3. Digital Skills</h2>
+      <p class="in-card-hint">Rate your confidence from 1 (not confident) to 5 (very confident).</p>
+
+      <div class="in-rating-grid" id="digitalSkillsGrid"></div>
+    </section>
+
+    <!-- 4. WORK STYLE -->
+    <section class="in-card">
+      <h2 class="in-card-title">4. Work Style</h2>
+      <p class="in-card-hint">Which describe you? Choose up to 4.</p>
+
+      <div class="in-options" data-group="workStyle" id="workStyleGroup">
+        <label class="in-check"><input type="checkbox" name="workStyle" value="Organised"> Organised</label>
+        <label class="in-check"><input type="checkbox" name="workStyle" value="Creative"> Creative</label>
+        <label class="in-check"><input type="checkbox" name="workStyle" value="Detail-oriented"> Detail-oriented</label>
+        <label class="in-check"><input type="checkbox" name="workStyle" value="Analytical"> Analytical</label>
+        <label class="in-check"><input type="checkbox" name="workStyle" value="Fast learner"> Fast learner</label>
+        <label class="in-check"><input type="checkbox" name="workStyle" value="Independent"> Independent</label>
+        <label class="in-check"><input type="checkbox" name="workStyle" value="Good communicator"> Good communicator</label>
+        <label class="in-check"><input type="checkbox" name="workStyle" value="Problem solver"> Problem solver</label>
+        <label class="in-check"><input type="checkbox" name="workStyle" value="Team player"> Team player</label>
+        <label class="in-check"><input type="checkbox" name="workStyle" value="Leadership-oriented"> Leadership-oriented</label>
+      </div>
+      <p class="in-limit-note" id="workStyleLimitNote"></p>
+    </section>
+
+    <!-- 5. QUICK COMPETENCY QUESTIONS -->
+    <section class="in-card">
+      <h2 class="in-card-title">5. Quick Competency Questions</h2>
+
+      <div class="form-row">
+        <label for="qNewTask">A client gives you a task you have never done before. What do you do?</label>
+        <textarea id="qNewTask" name="qNewTask" rows="3" required></textarea>
+      </div>
+      <div class="form-row">
+        <label for="qDeadline">You realise you may miss a deadline. What do you do?</label>
+        <textarea id="qDeadline" name="qDeadline" rows="3" required></textarea>
+      </div>
+      <div class="form-row">
+        <label for="qWhyJoin">Why would you like to join UNIKORN Global?</label>
+        <textarea id="qWhyJoin" name="qWhyJoin" rows="4" required></textarea>
+      </div>
+    </section>
+
+    <!-- 6. AVAILABILITY -->
+    <section class="in-card">
+      <h2 class="in-card-title">6. Availability</h2>
+
+      <div class="form-row">
+        <label>How many hours can you realistically commit per week?</label>
+        <div class="in-options" data-group="weeklyHours">
+          <label class="in-check"><input type="radio" name="weeklyHours" value="1–5" required> 1–5</label>
+          <label class="in-check"><input type="radio" name="weeklyHours" value="6–10"> 6–10</label>
+          <label class="in-check"><input type="radio" name="weeklyHours" value="11–20"> 11–20</label>
+          <label class="in-check"><input type="radio" name="weeklyHours" value="20+"> 20+</label>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label>When are you generally available? (select all that apply)</label>
+        <div class="in-options" data-group="availability">
+          <label class="in-check"><input type="checkbox" name="availability" value="Weekday mornings"> Weekday mornings</label>
+          <label class="in-check"><input type="checkbox" name="availability" value="Weekday afternoons"> Weekday afternoons</label>
+          <label class="in-check"><input type="checkbox" name="availability" value="Weekday evenings"> Weekday evenings</label>
+          <label class="in-check"><input type="checkbox" name="availability" value="Weekends"> Weekends</label>
+          <label class="in-check"><input type="checkbox" name="availability" value="Flexible"> Flexible</label>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label>Do you have reliable access to a computer and internet?</label>
+        <div class="in-options" data-group="reliableAccess">
+          <label class="in-check"><input type="radio" name="reliableAccess" value="Yes" required> Yes</label>
+          <label class="in-check"><input type="radio" name="reliableAccess" value="No"> No</label>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. PORTFOLIO / QUALIFICATIONS -->
+    <section class="in-card">
+      <h2 class="in-card-title">7. Portfolio / Qualifications</h2>
+
+      <div class="form-row">
+        <label>Do you have any qualifications, certifications, previous work, or a portfolio relevant to your skills?</label>
+        <div class="in-options" data-group="hasPortfolio">
+          <label class="in-check"><input type="radio" name="hasPortfolio" value="Yes" required> Yes</label>
+          <label class="in-check"><input type="radio" name="hasPortfolio" value="No"> No</label>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label for="portfolioDetails">Link / details (optional)</label>
+        <textarea id="portfolioDetails" name="portfolioDetails" rows="2"></textarea>
+      </div>
+    </section>
+
+    <button type="submit" class="submit-button" id="intakeSubmitButton">
+      <span class="submit-button-text">Submit My Application</span>
+      <span class="submit-button-spinner" aria-hidden="true"></span>
+    </button>
+
+    <p class="form-status" id="intakeFormStatus" role="status"></p>
+  </form>
+
+  <section class="in-success" id="successScreen" hidden>
+    <span class="step-eyebrow">Application received</span>
+    <h2 class="intro-title">Thank you<span class="dot">.</span></h2>
+    <p class="intro-sub">We've received your application. Our team will review it and follow up with a short practical task based on the skills you've shared.</p>
+  </section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="intake-script.js"></script>
+</body>
+            </html>
+            
