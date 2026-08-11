@@ -6,7 +6,7 @@
 // TODO: replace with your own EmailJS credentials (emailjs.com)
 const EMAILJS_PUBLIC_KEY = "dtxxe48IOxVnpeieh";
 const EMAILJS_SERVICE_ID = "service_qy91wll";
-const EMAILJS_TEMPLATE_ID_TEAM = "template_djlpd8o";
+const EMAILJS_TEMPLATE_ID_TEAM = "neqvygmy35jg0p7w";
 const EMAILJS_TEMPLATE_ID_CLIENT = "template_387rqwl";
 
 const WEEKS_PER_MONTH = 4.33;
