@@ -98,30 +98,6 @@ body {
 
 .intro { padding: 6px 4px 0; }
 
-.intro-title {
-  font-family: var(--font-display);
-  font-weight: 500;
-  font-size: clamp(26px, 6.5vw, 36px);
-  line-height: 1.25;
-  margin: 0 0 14px;
-  color: var(--ink);
-}
-
-.intro-title .dot {
-  background: var(--iris-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.intro-sub {
-  margin: 0;
-  color: var(--ink-soft);
-  font-size: 15px;
-  line-height: 1.65;
-  max-width: 50ch;
-}
-
 /* ---------- Section cards ---------- */
 .in-card {
   border: 1px solid var(--glass-border);
