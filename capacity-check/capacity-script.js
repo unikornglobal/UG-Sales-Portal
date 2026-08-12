@@ -3,11 +3,12 @@
    ============================================ */
 
 // ---------- Config ----------
-// Reuses the same EmailJS account as the Quote Builder.
-// Create a dedicated template for this quiz's results email, then paste its ID below.
+// Reuses the same EmailJS account AND the same "UG Quote Request" team
+// template as the Quote Builder (template_djlpd8o) — so results land in
+// your inbox in the same familiar layout, no new template needed.
 const EMAILJS_PUBLIC_KEY = "dtxxe48IOxVnpeieh";
 const EMAILJS_SERVICE_ID = "service_qy91wll";
-const EMAILJS_TEMPLATE_ID_QUIZ = "YOUR_QUIZ_TEMPLATE_ID";
+const EMAILJS_TEMPLATE_ID_QUIZ = "template_djlpd8o";
 
 const RATING_OPTIONS = [
   { value: 0, emoji: "✅", label: "Never" },
@@ -304,15 +305,19 @@ function buildResultsPayload(formData) {
   const sorted = [...categoryScores].sort((a, b) => b.score - a.score);
   const overallTier = getOverallTier(overallScore);
 
+  // Mapped onto the same variable names the "UG Quote Request" team
+  // template already uses, so this reuses that template as-is.
   return {
     company_name: formData.get("companyName"),
     contact_person: formData.get("contactPerson"),
     client_email: formData.get("email"),
     client_phone: formData.get("phone"),
-    overall_score: `${overallScore}/96 (${overallTier.label})`,
-    top_priority_area: sorted[0].name,
-    second_priority_area: sorted[1].name,
-    full_breakdown: sorted.map(c => `${c.name}: ${c.score}/12`).join(", "),
+    selected_package: `Business Capacity Check — ${overallScore}/96 (${overallTier.label})`,
+    selected_services: `Top priority: ${sorted[0].name} · Second priority: ${sorted[1].name}`,
+    weekly_hours: "—",
+    monthly_hours: "—",
+    estimated_investment: "Complimentary consultation requested (no quote yet)",
+    requirements: `Full capacity breakdown — ${sorted.map(c => `${c.name}: ${c.score}/12`).join(", ")}.`,
   };
 }
 
@@ -380,4 +385,3 @@ function init() {
 }
 
 document.addEventListener("DOMContentLoaded", init);
-
